@@ -116,3 +116,27 @@ var averageChange = changes.reduce((a, b) => a + b, 0) / changes.length;
 averageChange = averageChange.toFixed(2);
 
 console.log("Average Change: £" + averageChange);
+
+//Greatest increase and decrease in profits.
+
+var IncreaseNum = -Infinity;
+var IncreaseDate = "";
+var DecreaseNum = Infinity;
+var DecreaseDate = "";
+
+for (var i = 1; i < finance.length; i++) {
+  var date = finance[i][0];
+  var profits = finance[i][1];
+  var prevProfits = finance[i - 1][1];
+  var increaseNum = profits - prevProfits;
+
+  if (increaseNum > IncreaseNum) {
+    IncreaseNum = increaseNum;
+    IncreaseDate = date;
+  }
+
+  if (increaseNum < DecreaseNum) {
+    DecreaseNum = increaseNum;
+    DecreaseDate = date;
+  }
+}

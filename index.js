@@ -140,3 +140,13 @@ for (var i = 1; i < finance.length; i++) {
     DecreaseDate = date;
   }
 }
+
+// increase result
+console.log(
+  "Greatest increase in Profits: " + IncreaseDate + " (£" + IncreaseNum + ")"
+);
+
+// Decrease result
+console.log(
+  "Greatest Decrease in Profits: " + DecreaseDate + " (£" + DecreaseNum + ")"
+);

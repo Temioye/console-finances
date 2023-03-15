@@ -103,3 +103,16 @@ for (var i = 0; i < finance.length; i++) {
 }
 
 console.log("Total: £" + netTotal);
+
+//Average changes in profit/losses.
+var changes = [];
+
+for (var i = 1; i < finance.length; i++) {
+  changes.push(finance[i][1] - finance[i - 1][1]);
+}
+
+var averageChange = changes.reduce((a, b) => a + b, 0) / changes.length;
+
+averageChange = averageChange.toFixed(2);
+
+console.log("Average Change: £" + averageChange);
